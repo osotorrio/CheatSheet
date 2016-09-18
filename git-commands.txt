@@ -1,0 +1,40 @@
+git config --system
+git config --global
+git config
+git config --global --list
+git config --global user.name "user"
+git config --global user.email "email"
+git config --global core.edit [editor name]
+git config --global help.autocorrect [milliseconds]
+git config --global color.ui auto
+git config --global core.autocrlf true 
+git config --global unset core.autocrlf 
+
+git --version       => git version information
+git help [command]  => online help about command
+
+git init          => init local repository
+git clone [path]  => clone remote repository   
+git status        => statu information 
+
+git add [filename]   => add file to staging area
+git add [directory]  => add folder to staging area
+git add -u           => add modified files to staging area
+git add -A           => add all (modified and untracked) files to stating area
+
+git commit -m "description"  => commit locally
+git log                      => list commits
+git diff [SHA1]..[SHA1]      => see differents between to commits 
+git diff HEAD~[number]       => see differents between last commit and previous
+
+git checkout [filename]  => undo file changes
+git reset --hard         => undo all files changes
+git clean -n             => information about files would be removed
+git clean -f             => remove untracked files
+
+git reset [filename]     => unstaged file
+git reset                => unstaged all files
+git reset --soft HEAD~1  => uncommit last commit 
+git reset --hard HEAD~1  => remove last commit
+
+

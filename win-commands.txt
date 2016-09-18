@@ -1,0 +1,23 @@
+Documenation: https://technet.microsoft.com/en-us/library/hh848793.aspx
+
+to navigate to root: cd\
+to navigate to directory: cd [path]
+to navigate one forward: cd [directory name]
+to navigate one backawards: cd..
+
+to list directory: dir
+
+to create directory (make directory): md [directory name]
+to create file (new item): ni [filename]
+
+to delete directory (remove directory): rd [directory name]
+to delete file (remove item): ri [filename]
+
+to see content in file (invoke item): ii [filename]
+to see content in console (get content): gc [filename]
+
+to rename directory (rename): ren [directory] [new directorygit ]
+to rename file (rename): ren [filename] [new filename]
+
+to clean console (clean host): cls
+to leave console: exit
