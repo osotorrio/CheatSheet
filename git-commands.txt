@@ -46,8 +46,10 @@ git reset                => unstaged all files
 git reset --soft HEAD~1  => uncommit last commit 
 git reset --hard HEAD~1  => remove last commit
 
-git remote     => show the remote source of the local repository
-git remote -v  => same but verbose
+git remote                           => show the remote source of the local repository
+git remote -v                        => same but verbose
+git remote add [alias] [url source]  => add a remote for your local repository
+git remote remove [alias]            => remove a remote for your local repository
 
 git branch     => list local branches 
 git branch -r  => list remote branches 
