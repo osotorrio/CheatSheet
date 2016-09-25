@@ -55,3 +55,8 @@ git remote remove [alias]            => remove a remote for your local repositor
 git branch     => list local branches 
 git branch -r  => list remote branches 
 
+git tag               => list local tags
+git tag [tagname]     => create local tag
+git tag -a [tagname]  => create a local tag with annotations
+git tag -s [tagname]  => create a local tag signed (by default with annotations)
+git push --tags       => push the local tags to remote
