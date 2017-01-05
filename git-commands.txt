@@ -63,6 +63,6 @@ git tag -a [tagname]  => create a local tag with annotations
 git tag -s [tagname]  => create a local tag signed (by default with annotations)
 git push --tags       => push the local tags to remote
 
-git merge master      => merge master to your local branch
+git merge master      => when you do this from a branch it will try to merge to your local master, it will tell of any conflicts
 git stash             => save your "dirty" changes to a directory temporally and runs git reset --hard
 git stash apply       => recover "dirty" changes to your local branch (run this after you have pull new changes)
