@@ -1,0 +1,11 @@
+===== S3 =====
+
+- create a bucket -> aws s3 mb s3://bucket-name
+- list bucket -> aws s3 ls s3://bucket-name
+- upload file -> aws s3 cp filename.ext s3://bucket-name
+
+
+===== LAMBDA =====
+
+- update function -> aws lambda update-function-code --zip-file=fileb://filename.ext --function-name myfunction.js
+- update function config -> aws lambda update-function-configuration --function-name myfunction.js --handler newname.handler
