@@ -7,5 +7,6 @@
 
 ===== LAMBDA =====
 
-- update function -> aws lambda update-function-code --zip-file=fileb://filename.ext --function-name myfunction.js
-- update function config -> aws lambda update-function-configuration --function-name myfunction.js --handler newname.handler
+- update function code -> aws lambda update-function-code --zip-file=fileb://filename.zip --function-name myfunction
+- update function config -> aws lambda update-function-configuration --function-name myfunction --handler newname.handler
+- update function version -> aws lambda update-function-code --zip-file=fileb://filename.zip --function-name myfunction --publish
