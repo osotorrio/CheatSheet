@@ -7,15 +7,15 @@ git config --global user.email "email"
 git config --global core.edit [editor name]
 git config --global help.autocorrect [milliseconds]
 git config --global color.ui auto
-git config --global core.autocrlf true 
-git config --global unset core.autocrlf 
+git config --global core.autocrlf true
+git config --global unset core.autocrlf
 
 git --version       => git version information
 git help [command]  => online help about command
 
 git init          => init local repository
-git clone [path]  => clone remote repository   
-git status        => status information 
+git clone [path]  => clone remote repository
+git status        => status information
 
 git add [filename]   => add file to staging area
 git add [directory]  => add folder to staging area
@@ -26,16 +26,18 @@ git log                      => list commits
 git log --oneline            => list each commit on one line
 git log --oneline | wc -l    => count commits
 git log --online --graph     => list commits showing branches and merges
+git log --grep=strsearch     => Search by commit message
 git shortlog                 => list commits by author
 git shortlog -sne            => list author and email order by number of commits
 
-git commit -m "description"  => commit locally
-git commit-am "description"  => use it without git add when there are only modified files
-git diff [SHA1]..[SHA1]      => see differents between to commits 
-git diff HEAD~[number]       => see differents between last commit and previous
-git show HEAD                => show changes last commit
-git show HEAD~[number]       => show changes previous commits
-git show [SHA1]              => show changes commit 
+git commit -m "description"            => commit locally
+git commit-am "description"            => use it without git add when there are only modified files
+git commit -amend -m "new description" => Change commit message unpushed
+git diff [SHA1]..[SHA1]                => see differents between to commits
+git diff HEAD~[number]                 => see differents between last commit and previous
+git show HEAD                          => show changes last commit
+git show HEAD~[number]                 => show changes previous commits
+git show [SHA1]                        => show changes commit
 
 git checkout [filename]  => undo file changes
 git reset --hard         => undo all files changes
@@ -44,7 +46,7 @@ git clean -f             => remove untracked files
 
 git reset [filename]     => unstaged file
 git reset                => unstaged all files
-git reset --soft HEAD~1  => uncommit last commit 
+git reset --soft HEAD~1  => uncommit last commit
 git reset --hard HEAD~1  => remove last commit
 
 git remote                           => show the remote source of the local repository
@@ -52,17 +54,24 @@ git remote -v                        => same but verbose
 git remote add [alias] [url source]  => add a remote for your local repository
 git remote remove [alias]            => remove a remote for your local repository
 
-git branch                     => list local branches 
-git branch -r                  => list remote branches 
+git branch                     => list local branches
+git branch -r                  => list remote branches
 git checkout -b [branch name]  => create branch on local repository
 git push origin [branch name]  => push the branch to origin
 
-git tag               => list local tags
-git tag [tagname]     => create local tag
-git tag -a [tagname]  => create a local tag with annotations
-git tag -s [tagname]  => create a local tag signed (by default with annotations)
-git push --tags       => push the local tags to remote
+git tag                => list local tags
+git tag [tagname]      => create local tag
+git tag -a [tagname]   => create a local tag with annotations
+git tag -s [tagname]   => create a local tag signed (by default with annotations)
+git push --tags        => push the local tags to remote
 
-git merge master      => when you do this from a branch it will try to merge to your local master, it will tell of any conflicts
-git stash             => save your "dirty" changes to a directory temporally and runs git reset --hard
-git stash apply       => recover "dirty" changes to your local branch (run this after you have pull new changes)
+git merge master       => when you do this from a branch it will try to merge to your local master, it will tell of any conflicts
+git merge --abort      => Abort a Git merge after the merge has resulted in conflicts.
+
+git stash              => save your "dirty" changes to a directory temporally and runs git reset --hard
+git stash apply        => recover "dirty" changes to your local branch (run this after you have pull new changes)
+
+git cherry-pick [SHA1] => Apply the changes introduced by some existing
+git revert [SHA1]      => Revert some existing commits
+git revert -m 1 [SHA1] => Revert a merge commit
+git checkout [SHA1]    => Use command to check out a particular commit
