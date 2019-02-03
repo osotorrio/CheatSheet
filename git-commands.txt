@@ -1,3 +1,5 @@
+touch .gitignore => create an empty gitignore file
+
 git config --system
 git config --global
 git config
