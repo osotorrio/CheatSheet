@@ -1,4 +1,5 @@
 touch .gitignore => create an empty gitignore file
+code . => open visual code on current folder
 
 --- GENERAL
 git --version       => git version information
@@ -20,7 +21,7 @@ git config --global unset core.autocrlf
 --- INITIALIZING
 git init          => init local repository
 git clone [path]  => clone remote repository
-git status        => status informationg
+git status        => status information
 
 --- ADDING
 git add [filename]      => add file to staging area
@@ -39,19 +40,21 @@ git shortlog -sne            => list author and email order by number of commits
 git commit -m "description"            => commit locally
 git commit-am "description"            => use it without git add when there are only modified files
 git commit -amend -m "new description" => Change commit message unpushed
-git diff [SHA1]..[SHA1]                => see differents between to commits
-git diff HEAD~[number]                 => see differents between last commit and previous
+git diff [SHA1]..[SHA1]                => see differences between to commits
+git diff HEAD~[number]                 => see differences between last commit and previous
 git show HEAD                          => show changes last commit
 git show HEAD~[number]                 => show changes previous commits
 git show [SHA1]                        => show changes commit
 
-git checkout [filename]  => undo file changes
-git reset --hard         => undo all files changes
-git clean -n             => information about files would be removed
-git clean -f             => remove untracked files
+--- 
+git checkout [filename]        => undo file changes
+git reset --hard               => undo all files changes
+git clean -n (--dry-run)       => information about files would be removed
+git clean -f (--force)         => remove untracked files
+git clean -i (--interactive)   => ask you for options before removing anything
 
-git reset [filename]     => unstaged file
-git reset                => unstaged all files
+git reset [filename]     => unstage  file
+git reset                => unstage  all files
 git reset --soft HEAD~1  => uncommit last commit
 git reset --hard HEAD~1  => remove last commit
 
