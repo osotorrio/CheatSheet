@@ -3,6 +3,7 @@ https://git-scm.com/docs
 --- Tricks
 touch .gitignore    => create an empty gitignore file
 code .              => open visual code on current folder
+explorer .          => open file explorer on current folder
 
 --- Setup and Config
 git --version       => display git's version
@@ -27,12 +28,12 @@ git add <directory>     => add folder to staging area
 git add -u (--update)   => add modified files to staging area
 git add -A (--all)      => add all (modified and untracked) files to stating area
 
-git commit -m "description"            => commit locally
+git commit -m "description"             => commit locally
 git commit -am "description"            => add and commit modified files
 git commit --amend -m "new description" => Change commit message unpushed
 
-git diff <SHA1>..<SHA1>                => see differences between to commits
-git diff HEAD~<number>                 => see differences between last commit and previous
+git diff <SHA1>..<SHA1> => see differences between to commits
+git diff HEAD~<number>  => see differences between last commit and previous
 
 
 --- Branching and Merging
@@ -44,10 +45,16 @@ git log --grep=<text pattern>   => Search by commit message
 git shortlog                    => list commits by author
 git shortlog -sne               => list author and email order by number of commits
 
-git checkout <filename>         => undo file changes
+git stash list                  => list all your dirty changes
+git stash                       => save your dirty changes (no untracked files) to a temporal directory
+git stash push -m "description" => save your dirty changes (no untracked files) with a message
+git stash pop                   => remove last stashed entry and apply it on top of the current working tree state
+git stash apply                 => like pop but do not remove the state from the stash list
+git stash clear                 => delete all stash entries
 
 
 --- Sharing and Updating Projects
+
 
 --- Inspection and Comparison
 git show HEAD   => show changes last commit
@@ -62,24 +69,36 @@ git show <SHA1> => show changes commit
 --- Plumbing Commands
 
 
+--- Undo changes locally
+git checkout <filename>     => undo file changes (before it is added to staging area)
+git checkout <foldername>   => undo all files changes in folder (before it is added to staging area)
+git reset --hard            => undo all files changes (before it is added to stating area)
 
 
+--- Delete untracked files
+git clean -n (--dry-run)            => information about files would be removed
+git clean -f (--force) <filename>   => remove untracked file
+git clean -f (--force) <foldername> => remove untracked files in folder
+git clean -f (--force)              => remove all untracked files
+git clean -i (--interactive)        => ask you for options before removing anything
 
 
+--- Remove files from staging area
+git reset <filename>     => unstage file
+git reset <foldername>   => unstage files in folder
+git reset                => unstage all files
 
 
-
---- 
-
-git reset --hard               => undo all files changes
-git clean -n (--dry-run)       => information about files would be removed
-git clean -f (--force)         => remove untracked files
-git clean -i (--interactive)   => ask you for options before removing anything
-
-git reset <filename>     => unstage  file
-git reset                => unstage  all files
+--- Remove commits locally
 git reset --soft HEAD~1  => uncommit last commit
 git reset --hard HEAD~1  => remove last commit
+
+
+
+
+
+
+
 
 git remote                           => show the remote source of the local repository
 git remote -v                        => same but verbose
