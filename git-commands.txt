@@ -56,14 +56,24 @@ git branch                              => list local branches
 git branch -r (--remote)                => list remote branches
 gti branch -a (--all)                   => list all branches
 git checkout <branch name>              => switch to local branch
-git checkout -b <branch name>           => create branch on local repository
+git checkout -b <branch name>           => create new branch in local repository
+git checkout <SHA1>                     => check out a particular commit on the current branch
 git push origin <branch name>           => push the branch to remote origin
 git branch -d (--delete) <branch name>  => delete local branch 
 git branch -d -r <branch name>          => delete a remote branch
 
+git merge <branch name> => locally merge the named branch to the checked-out branch
+git merge --abort       => abort a Git merge after the merge has resulted in conflicts.
+
 
 --- Sharing and Updating Projects
-git fetch -v    =>
+git fetch -v    => fetches and display all changes to be pulled down
+git push -v     => push changes to remote
+
+git remote -v                        => display the remote source of the local repository
+git remote add <alias> <url source>  => add a remote for your local repository
+git remote remove <alias>            => remove the remote for your local repository
+
 
 --- Inspection and Comparison
 git show HEAD   => show changes last commit
@@ -72,10 +82,11 @@ git show <SHA1> => show changes commit
 
 
 --- Patching
---- Debugging
---- Administration
---- Server Admin
---- Plumbing Commands
+git cherry-pick <SHA1>      => apply the changes introduced by some existing commits
+git rebase <branch name>    => locally rebase the named branch on top of the checked-out branch
+
+git revert <SHA1>       => revert some existing commits
+git revert -m 1 <SHA1>  => revert a merge commit
 
 
 --- Undo changes locally
@@ -103,32 +114,9 @@ git reset --soft HEAD~1  => uncommit last commit
 git reset --hard HEAD~1  => remove last commit
 
 
-
-
-
-
-
-
-git remote                           => show the remote source of the local repository
-git remote -v                        => same but verbose
-git remote add <alias> <url source>  => add a remote for your local repository
-git remote remove <alias>            => remove a remote for your local repository
-
-
-
+--- Tagging
 git tag                => list local tags
 git tag <tagname>      => create local tag
 git tag -a <tagname>   => create a local tag with annotations
 git tag -s <tagname>   => create a local tag signed (by default with annotations)
 git push --tags        => push the local tags to remote
-
-git merge master       => when you do this from a branch it will try to merge to your local master, it will tell of any conflicts
-git merge --abort      => Abort a Git merge after the merge has resulted in conflicts.
-
-git stash              => save your "dirty" changes to a directory temporally and runs git reset --hard
-git stash apply        => recover "dirty" changes to your local branch (run this after you have pull new changes)
-
-git cherry-pick <SHA1> => Apply the changes introduced by some existing
-git revert <SHA1>      => Revert some existing commits
-git revert -m 1 <SHA1> => Revert a merge commit
-git checkout <SHA1>    => Use command to check out a particular commit
