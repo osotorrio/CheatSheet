@@ -5,6 +5,7 @@ touch .gitignore    => create an empty gitignore file
 code .              => open visual code on current folder
 explorer .          => open file explorer on current folder
 
+
 --- Setup and Config
 git --version       => display git's version
 git help <command>  => online help about the command
