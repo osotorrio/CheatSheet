@@ -1,45 +1,59 @@
+https://git-scm.com/docs
+
+--- Tricks
 touch .gitignore => create an empty gitignore file
 code . => open visual code on current folder
 
---- GENERAL
-git --version       => git version information
-git help [command]  => online help about command
+--- Setup and Config
+git --version       => display git's version
+git help [command]  => online help about the command
+git status          => status information
 
---- CONFIGURATION
-git config --system
-git config --global
-git config
-git config --global --list
-git config --global user.name "user"
+git config --global -l (--list) => list all variables set in config file
+git config --global user.name "user name"
 git config --global user.email "email"
-git config --global core.edit [editor name]
-git config --global help.autocorrect [milliseconds]
-git config --global color.ui auto
+git config --global core.editor [editor name]
 git config --global core.autocrlf true
-git config --global unset core.autocrlf
 
---- INITIALIZING
-git init          => init local repository
+
+--- Getting and Creating Projects
+git init          => create local repository
 git clone [path]  => clone remote repository
-git status        => status information
 
---- ADDING
+
+--- Basic Snapshotting
 git add [filename]      => add file to staging area
 git add [directory]     => add folder to staging area
 git add -u (--update)   => add modified files to staging area
 git add -A (--all)      => add all (modified and untracked) files to stating area
 
-git log                      => list commits
-git log --oneline            => list each commit on one line
-git log --oneline | wc -l    => count commits
-git log --online --graph     => list commits showing branches and merges
-git log --grep=strsearch     => Search by commit message
-git shortlog                 => list commits by author
-git shortlog -sne            => list author and email order by number of commits
-
 git commit -m "description"            => commit locally
-git commit-am "description"            => use it without git add when there are only modified files
-git commit -amend -m "new description" => Change commit message unpushed
+git commit -am "description"            => add and commit modified files
+git commit --amend -m "new description" => Change commit message unpushed
+
+
+--- Branching and Merging
+git log                         => list commits
+git log --oneline               => list each commit on one line
+git log --oneline | wc -l       => count commits
+git log --online --graph        => list commits showing branches and merges
+git log --grep=[text pattern]   => Search by commit message
+git shortlog                    => list commits by author
+git shortlog -sne               => list author and email order by number of commits
+
+--- Sharing and Updating Projects
+--- Inspection and Comparison
+--- Patching
+--- Debugging
+--- Administration
+--- Server Admin
+--- Plumbing Commands
+
+
+
+
+
+
 git diff [SHA1]..[SHA1]                => see differences between to commits
 git diff HEAD~[number]                 => see differences between last commit and previous
 git show HEAD                          => show changes last commit
