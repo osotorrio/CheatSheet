@@ -54,10 +54,13 @@ git stash clear                 => delete all stash entries
 
 git branch                              => list local branches
 git branch -r (--remote)                => list remote branches
+gti branch -a (--all)                   => list all branches
+git checkout <branch name>              => switch to local branch
 git checkout -b <branch name>           => create branch on local repository
-git push origin <branch name>           => push the branch to origin
+git push origin <branch name>           => push the branch to remote origin
 git branch -d (--delete) <branch name>  => delete local branch 
 git branch -d -r <branch name>          => delete a remote branch
+
 
 --- Sharing and Updating Projects
 git fetch -v    =>
