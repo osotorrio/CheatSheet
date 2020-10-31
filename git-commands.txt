@@ -52,9 +52,15 @@ git stash pop                   => remove last stashed entry and apply it on top
 git stash apply                 => like pop but do not remove the state from the stash list
 git stash clear                 => delete all stash entries
 
+git branch                              => list local branches
+git branch -r (--remote)                => list remote branches
+git checkout -b <branch name>           => create branch on local repository
+git push origin <branch name>           => push the branch to origin
+git branch -d (--delete) <branch name>  => delete local branch 
+git branch -d -r <branch name>          => delete a remote branch
 
 --- Sharing and Updating Projects
-
+git fetch -v    =>
 
 --- Inspection and Comparison
 git show HEAD   => show changes last commit
@@ -105,10 +111,7 @@ git remote -v                        => same but verbose
 git remote add <alias> <url source>  => add a remote for your local repository
 git remote remove <alias>            => remove a remote for your local repository
 
-git branch                     => list local branches
-git branch -r                  => list remote branches
-git checkout -b <branch name>  => create branch on local repository
-git push origin <branch name>  => push the branch to origin
+
 
 git tag                => list local tags
 git tag <tagname>      => create local tag
