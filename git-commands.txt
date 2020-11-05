@@ -43,6 +43,7 @@ git log                         => list commits
 git log --oneline               => list each commit on one line
 git log --oneline | wc -l       => count commits
 git log --online --graph        => list commits showing branches and merges
+git log --stat                  => display the number of insertions and deletions to each file altered by each commit
 git log --grep=<text pattern>   => Search by commit message
 git shortlog                    => list commits by author
 git shortlog -sne               => list author and email order by number of commits
