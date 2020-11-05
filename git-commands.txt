@@ -3,6 +3,7 @@ https://git-scm.com/docs
 --- Tricks
 touch .gitignore    => create an empty gitignore file
 code .              => open visual code on current folder
+code -a .           => open visual code on current path in your terminal
 explorer .          => open file explorer on current folder
 
 
