@@ -58,7 +58,7 @@ git stash clear                 => delete all stash entries
 
 git branch                              => list local branches
 git branch -v                           => list local branches with info about last commit
-git branch -v                           => list local branches with info about last commit and upstream
+git branch -vv                          => list local branches with info about last commit and upstream
 git branch                              => list local branches
 git branch -r (--remote)                => list remote branches
 gti branch -a (--all)                   => list all branches
