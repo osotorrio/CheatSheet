@@ -28,7 +28,7 @@ git clone <path>  => clone remote repository
 git add <filename>      => add file to staging area
 git add <directory>     => add folder to staging area
 git add -u (--update)   => add modified files to staging area
-git add .               => add all (modified and untracked) files to stating area
+git add .               => add all (modified and untracked) files relative to the path to stating area
 git add -A (--all)      => add all (modified and untracked) files to stating area
 
 git commit -m "description"             => commit locally
