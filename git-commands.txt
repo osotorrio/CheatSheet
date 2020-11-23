@@ -43,7 +43,7 @@ git diff HEAD~<number>  => see differences between last commit and previous
 git log                         => list commits
 git log --oneline               => list each commit on one line
 git log --oneline | wc -l       => count commits
-git log --online --graph        => list commits showing branches and merges
+git log --oneline --graph        => list commits showing branches and merges
 git log --stat                  => display the number of insertions and deletions to each file altered by each commit
 git log --grep=<text pattern>   => Search by commit message
 git shortlog                    => list commits by author
