@@ -120,6 +120,9 @@ git reset                => unstage all files
 git reset --soft HEAD~1  => uncommit last commit
 git reset --hard HEAD~1  => remove last commit
 
+--- Remove files from working tree and index
+git rm <filepath>   => remove the file from git but leave the file in your local directory
+
 
 --- Tagging
 git tag                => list local tags
