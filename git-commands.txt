@@ -63,6 +63,7 @@ git branch                              => list local branches
 git branch -r (--remote)                => list remote branches
 gti branch -a (--all)                   => list all branches
 git checkout <branch name>              => switch to local branch
+git checkout -                          => switch to the previous branch
 git checkout -b <branch name>           => create new branch in local repository
 git checkout <SHA1>                     => check out a particular commit on the current branch
 git push origin <branch name>           => push the branch to remote origin
@@ -89,11 +90,18 @@ git show <SHA1> => show changes commit
 
 
 --- Patching
-git cherry-pick <SHA1>      => apply the changes introduced by some existing commits
-git rebase <branch name>    => locally rebase the named branch on top of the checked-out branch
+git cherry-pick <SHA1>                      => creates a new commit with the changes from a commit in another branch
+git cherry-pick <SHA1> -n (not commit)      => stages the changes from a commit in another branch
+git cherry-pick <SHA1> <SHA2> <SHA3>        => creates a new commits with the changes from multiple commits in another branch
 
-git revert <SHA1>       => revert some existing commits
-git revert -m 1 <SHA1>  => revert a merge commit
+git rebase <branch name>                    => locally rebase the named branch on top of the checked-out branch
+git rebase -i (interactive) <branch name>   => locally rebase interactively the named branch on top of the checked-out branch
+
+git revert <SHA1>                           => revert some existing commits
+git revert -m 1 <SHA1>                      => revert a merge commit
+
+git reflog (reference log)                  => record when the tips of branches and other references were updated in the local repository
+git reset <SHA1>                            => reset the repository to the commit, merge or rebase point of the SHA ide
 
 
 --- Undo changes locally
