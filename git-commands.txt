@@ -105,9 +105,10 @@ git reset <SHA1>                            => reset the repository to the commi
 
 
 --- Undo changes locally
-git checkout <filename>     => undo file changes (before it is added to staging area)
-git checkout <foldername>   => undo all files changes in folder (before it is added to staging area)
-git reset --hard            => undo all files changes (before it is added to stating area)
+git checkout <filename>       => undo file changes (before it is added to staging area)
+git checkout <foldername>     => undo all files changes in folder (before it is added to staging area)
+git checkout HEAD <filename>  => undelete a deleted file (before it is added to staging area)
+git reset --hard              => undo all files changes (before it is added to stating area)
 
 
 --- Delete untracked files
