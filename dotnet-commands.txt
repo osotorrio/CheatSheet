@@ -1,0 +1,56 @@
+**Bash Commands**
+
+to print workind directory path: pwd
+to navigate to user folder: c ~
+to navigate to root: cd /
+to navigate to directory: cd [path]
+to navigate one forward: cd [directory name]
+to navigate one backawards: cd ..
+
+to list directory: ls
+
+to create directory (make directory): mkdir [directory name]
+to delete directory (remove directory): rm -r [directory name]
+
+to create file: touch [filename]
+to delete file: rm [filename]
+
+to see content in file:
+to see content in console:
+
+to copy a file:
+to copy a directory:
+
+to rename directory:
+to rename file:
+
+to clean console: clear
+to leave console: exit
+
+**DotNet Core Commands** https://docs.microsoft.com/en-gb/dotnet/core/tools/
+
+dotnet -h (--help) -> get help
+dotnet [command] -h (--help) -> get help for a command
+
+dotnet new [type of project template] -o [name of directory] -> create a new project
+dotnet restore -> restore packages
+dotnet build -> build project in directory
+dotnet run -> run application
+dotnet [file.dll] -> execute a DLL file
+dotnet test -> run tests
+dotnet pack -> create nuget packages
+dotnet clean -> clean project output
+
+dotnet new sln -> create a blank solution
+dotnet sln add -> add project to solution
+dotnet sln remove -> remove project from solution
+dotnet sln list -> list projects in the solution
+
+dotnet add [path/file.csproj] reference [path/file.csproj] -> add refrence to the project
+dotnet remove [path/file.csproj] reference [path/file.csproj] -> remove refrence to the project
+dotnet list [path/file.csproj] reference -> list project references
+
+dotnet add [path/file.csproj] package [path/file.csproj] -> add package to the project
+dotnet remove [path/file.csproj] package [path/file.csproj] -> remove package to the project
+dotnet list [path/file.csproj] package -> list project pakcages
+
