@@ -3,7 +3,9 @@ https://git-scm.com/docs
 --- Tricks
 touch .gitignore    => create an empty gitignore file
 code .              => open visual code on current folder
+code -a .           => open visual code on current path in your terminal
 explorer .          => open file explorer on current folder
+
 
 --- Setup and Config
 git --version       => display git's version
@@ -26,6 +28,7 @@ git clone <path>  => clone remote repository
 git add <filename>      => add file to staging area
 git add <directory>     => add folder to staging area
 git add -u (--update)   => add modified files to staging area
+git add .               => add all (modified and untracked) files relative to the path to stating area
 git add -A (--all)      => add all (modified and untracked) files to stating area
 
 git commit -m "description"             => commit locally
@@ -40,7 +43,8 @@ git diff HEAD~<number>  => see differences between last commit and previous
 git log                         => list commits
 git log --oneline               => list each commit on one line
 git log --oneline | wc -l       => count commits
-git log --online --graph        => list commits showing branches and merges
+git log --oneline --graph        => list commits showing branches and merges
+git log --stat                  => display the number of insertions and deletions to each file altered by each commit
 git log --grep=<text pattern>   => Search by commit message
 git shortlog                    => list commits by author
 git shortlog -sne               => list author and email order by number of commits
@@ -53,9 +57,13 @@ git stash apply                 => like pop but do not remove the state from the
 git stash clear                 => delete all stash entries
 
 git branch                              => list local branches
+git branch -v                           => list local branches with info about last commit
+git branch -vv                          => list local branches with info about last commit and upstream
+git branch                              => list local branches
 git branch -r (--remote)                => list remote branches
 gti branch -a (--all)                   => list all branches
 git checkout <branch name>              => switch to local branch
+git checkout -                          => switch to the previous branch
 git checkout -b <branch name>           => create new branch in local repository
 git checkout <SHA1>                     => check out a particular commit on the current branch
 git push origin <branch name>           => push the branch to remote origin
@@ -82,17 +90,25 @@ git show <SHA1> => show changes commit
 
 
 --- Patching
-git cherry-pick <SHA1>      => apply the changes introduced by some existing commits
-git rebase <branch name>    => locally rebase the named branch on top of the checked-out branch
+git cherry-pick <SHA1>                      => creates a new commit with the changes from a commit in another branch
+git cherry-pick <SHA1> -n (not commit)      => stages the changes from a commit in another branch
+git cherry-pick <SHA1> <SHA2> <SHA3>        => creates a new commits with the changes from multiple commits in another branch
 
-git revert <SHA1>       => revert some existing commits
-git revert -m 1 <SHA1>  => revert a merge commit
+git rebase <branch name>                    => locally rebase the named branch on top of the checked-out branch
+git rebase -i (interactive) <branch name>   => locally rebase interactively the named branch on top of the checked-out branch
+
+git revert <SHA1>                           => revert some existing commits
+git revert -m 1 <SHA1>                      => revert a merge commit
+
+git reflog (reference log)                  => record when the tips of branches and other references were updated in the local repository
+git reset <SHA1>                            => reset the repository to the commit, merge or rebase point of the SHA ide
 
 
 --- Undo changes locally
-git checkout <filename>     => undo file changes (before it is added to staging area)
-git checkout <foldername>   => undo all files changes in folder (before it is added to staging area)
-git reset --hard            => undo all files changes (before it is added to stating area)
+git checkout <filename>       => undo file changes (before it is added to staging area)
+git checkout <foldername>     => undo all files changes in folder (before it is added to staging area)
+git checkout HEAD <filename>  => undelete a deleted file (before it is added to staging area)
+git reset --hard              => undo all files changes (before it is added to stating area)
 
 
 --- Delete untracked files
@@ -112,6 +128,9 @@ git reset                => unstage all files
 --- Remove commits locally
 git reset --soft HEAD~1  => uncommit last commit
 git reset --hard HEAD~1  => remove last commit
+
+--- Remove files from working tree and index
+git rm <filepath>   => remove the file from git but leave the file in your local directory
 
 
 --- Tagging
