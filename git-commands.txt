@@ -69,6 +69,8 @@ git checkout <SHA1>                     => check out a particular commit on the 
 git push origin <branch name>           => push the branch to remote origin
 git branch -d (--delete) <branch name>  => delete local branch 
 git branch -d -r <branch name>          => delete a remote branch
+git remote prune origin --dry-run       => lists branches that can be deleted/pruned on your local
+git remote prune origin                 => delete the local references
 
 git merge <branch name> => locally merge the named branch to the checked-out branch
 git merge --abort       => abort a Git merge after the merge has resulted in conflicts.
