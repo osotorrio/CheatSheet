@@ -77,8 +77,10 @@ git merge --abort       => abort a Git merge after the merge has resulted in con
 
 
 --- Sharing and Updating Projects
-git fetch -v    => fetches and display all changes to be pulled down
-git push -v     => push changes to remote
+git pull -p (prune)   => pull changes pruning deleted branches
+git pull -v (verbose) => pull changes verbose
+git fetch -v          => fetches and display all changes to be pulled down
+git push -v           => push changes to remote
 
 git remote -v                        => display the remote source of the local repository
 git remote add <alias> <url source>  => add a remote for your local repository
