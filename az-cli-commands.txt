@@ -6,3 +6,4 @@ az group create -l francecentral -n learning-cli-commands --subscription b244ff6
 az group list --output table => list all resource groups
 export AZURE_REGION = centralus => create a variable
 echo ${AZURE_REGION} => print out variable
+az group list --query "[?name == '$RESOURCE_GROUP']" => query results (https://jmespath.org/)
