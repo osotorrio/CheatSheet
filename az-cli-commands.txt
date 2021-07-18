@@ -4,4 +4,5 @@ az find "az vm" => find common uses for a word or a command
 az account list-locations --output table => list all Azure locations in a table
 az group create -l francecentral -n learning-cli-commands --subscription b244ff61-9a61-4adf-aa2e-e10dd68bd2aa => create a resource group
 az group list --output table => list all resource groups
-
+export AZURE_REGION = centralus => create a variable
+echo ${AZURE_REGION} => print out variable
