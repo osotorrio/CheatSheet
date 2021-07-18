@@ -1,4 +1,5 @@
 az login => log in to Azure from the CLI
 az -h (--help) => get help
-az account list-locations --output table => list all Azure locations in a table
 az find "az vm" => find common uses for a word or a command
+az account list-locations --output table => list all Azure locations in a table
+
